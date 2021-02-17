@@ -59,6 +59,7 @@
 }
 
 .nav-bar a{
+    text-decoration: none;
     margin: 0 1rem;
     padding: 0.3rem;
     padding-left: 0.6rem;
@@ -68,7 +69,10 @@
     font-size: 1rem;
     position: relative;
     z-index: 10;
-    cursor: pointer;
+}
+
+.links{
+    color: white;
 }
 
 .nav-bar a:last-child{
