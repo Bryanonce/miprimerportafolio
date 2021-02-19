@@ -1,0 +1,89 @@
+.dash-container{
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.entradas{
+    margin: 10px;
+    height: 18rem;
+    width: 45%;
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px gray;
+    animation: entrada-move-left 1s;
+    overflow: hidden;
+}
+
+.entradas h3{
+    text-align: center;
+    color: var(--colorPrincipal);
+    text-transform: uppercase;
+}
+
+.entradas .content-entradas{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    height: 85%;
+    justify-content: center;
+}
+
+.entradas .content-entradas input,
+.entradas .content-entradas textarea,
+.entradas .content-entradas select{
+    margin-bottom: 10px;
+    padding: 3px;
+}
+
+.content-row{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.row{
+    width: 45%;
+    height: 100%;
+}
+
+.botonera{
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.botonera button{
+    width: 6rem;
+    margin: 10px;
+    background-color: var(--colorPrincipal);
+    border: none;
+    padding: 5px;
+    color: white;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.botonera button:hover{
+    background-color: var(--colorSombraPrincipal);
+}
+
+.direccion{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.direccion button{
+    width: 2rem;
+    margin: 5px;
+}

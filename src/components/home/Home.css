@@ -1,6 +1,7 @@
 
 .home{
     background-image: url('../../assets/img/bg.jpg');
+    animation: entrada 1s;
 }
 
 .container{

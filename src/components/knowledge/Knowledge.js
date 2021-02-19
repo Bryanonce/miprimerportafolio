@@ -1,23 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 //import css
 import './Knowledge.css'
-import {back, front} from './response';
+// custom hook
+import {useFetch} from '../../hooks/useFetch';
+// import url_env
+import {env_url} from '../../config/enviroments';
 
 export const Knowledge = ()=>{
-    const [fadeIn,setFadeIn] = useState('popup');
-    const frontend = front();
-    const backend = back();
-    
-    const popupTech = ()=>{
-        switch(fadeIn){
-            case 'popup':
-                setFadeIn('show-popup');
-                break;
-            default:
-                setFadeIn('popup')
-                break;
-        }
-    }
+    const [frontend,loadingFrontend] = useFetch(`${env_url}/knowledges/front`);
+    const [backend,loadingBackend] = useFetch(`${env_url}/knowledges/back`);
 
     return (
         <div className="h-100 gradiente">
@@ -26,15 +17,16 @@ export const Knowledge = ()=>{
                     <h2>Frontend</h2>
                     <div className="logos-container"> 
                         {
-                            frontend.map((element,index)=>{
-                                const {name,img,describe} = element
-                                return(
-                                        <div onClick={popupTech} className="ubicador" key={index}>
-                                            <img className="logo-tech" src={img} alt={name} />
-                                            <span className={fadeIn}>{describe}</span>
-                                        </div>
-                                );
-                            })
+                            loadingFrontend?
+                                frontend.map((element,index)=>{
+                                    return(
+                                            <div className="ubicador" key={index}>
+                                                <img className="logo-tech" src={`${env_url}${element.image}`} alt={element.name}/>
+                                            </div>
+                                    );
+                                })
+                            :
+                                null
                         }
                     </div>
                 </div>
@@ -42,15 +34,16 @@ export const Knowledge = ()=>{
                     <h2>Backend</h2>
                     <div className="logos-container"> 
                         {
-                            backend.map((element,index)=>{
-                                const {name,img,describe} = element
-                                return(
-                                    <div onClick={popupTech} className="ubicador" key={index}>
-                                        <img className="logo-tech" src={img} alt={name} />
-                                        <span className={fadeIn}>{describe}</span>
-                                    </div>
-                            );
-                            })
+                            loadingBackend?
+                                backend.map((element,index)=>{
+                                    return(
+                                        <div className="ubicador" key={index}>
+                                            <img className="logo-tech" src={`${env_url}${element.image}`} alt={element.name}/>
+                                        </div>
+                                    );
+                                })
+                            :
+                                null
                         }
                     </div>
                 </div>

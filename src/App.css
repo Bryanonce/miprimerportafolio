@@ -12,6 +12,17 @@
     }
 }
 
+@keyframes entrada-move-left{
+    from{
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
 
 :root{
     --fuentePrincipal: 'Open Sans', sans-serif;

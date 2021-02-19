@@ -12,10 +12,9 @@ export const NavBar = ()=>{
                 <p>Porta<span>folio</span></p>
             </div>
             <nav className="nav-bar">
-                
                 <Link className="links" to="/">Home</Link>
                 <Link className="links" to="/knows">Conocimietos</Link>
-                
+                <Link className="links" to="/login">Admin</Link>                
             </nav>
         </div>
     );
