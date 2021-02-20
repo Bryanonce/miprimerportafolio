@@ -37,6 +37,10 @@ export const AuthState = (props)=>{
             console.log(err)
         }
     }
+    const logout = ()=>{
+        localStorage.removeItem('tokenPortfolio');
+        setIsLoged(false)
+    }
     return (
         <AuthContext.Provider
             value={{
@@ -44,7 +48,8 @@ export const AuthState = (props)=>{
                 handleInputChange,
                 token,
                 isloged,
-                login
+                login,
+                logout
             }}
         >
             {props.children}

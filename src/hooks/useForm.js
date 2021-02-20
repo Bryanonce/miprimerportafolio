@@ -12,5 +12,5 @@ export const useForm = (initialValue={
             [name]: value
         })
     }
-    return [form,handleInputChange];
+    return [form,handleInputChange,setForm];
 }

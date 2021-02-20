@@ -6,7 +6,7 @@ import {
     Redirect
 } from 'react-router-dom';
 //import components
-import { Dashboard } from '../components/dashboard/Dashboard';
+import { DashSwitch } from '../components/dashboard/DashSwitch';
 import {Home} from '../components/home/Home';
 import { Knowledge } from '../components/knowledge/Knowledge';
 import { Login } from '../components/login/Login';
@@ -31,17 +31,12 @@ export const Routes = ()=>{
                         component={Knowledge}
                     />
                     <AuthState>
+                        <DashSwitch />
                         <PrivateRoute 
                             exact
                             path="/login"
                             component={Login}
-                            redir="/dash"
-                        />
-                        <PrivateRoute 
-                            exact
-                            path="/dash"
-                            component={Dashboard}
-                            redir="/login"
+                            redir="/entr"
                         />
                     </AuthState>
                     

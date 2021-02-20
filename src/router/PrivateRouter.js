@@ -12,7 +12,7 @@ export const PrivateRoute = ({
         <Route 
             {...rest}
             render={(props)=>{
-                return ((redir==='/dash')? !isloged: isloged )? <Component {...props} /> : <Redirect to={redir} />
+                return ((redir==='/entr')? !isloged: isloged )? <Component {...props} /> : <Redirect to={redir} />
             }}
         />
     );
